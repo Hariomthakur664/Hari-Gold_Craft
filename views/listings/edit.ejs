@@ -1,0 +1,61 @@
+<% layout("/layouts/boilerplate") %>
+
+<div class="container mt-4">
+    <div class="row">
+        <h3 class="mb-4">Update Shop Listing</h3>
+    </div><br>
+    
+    <form  method="post" action="/hr/listing/<%= listing._id %>?_method=put" class="needs-validation" enctype="multipart/form-data" >
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input id="name" name="listing[name]" type="text" class="form-control" value="<%= listing.name %>" required>
+                <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                    Please choose a Shop name.
+                </div>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label for="specification" class="form-label">Description</label>
+                <textarea id="specification" name="listing[description]" class="form-control" rows="3" required><%= listing.description %></textarea>
+                <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                    Please enter valid description.
+                </div>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label for="specification-detail" class="form-label"> Specification</label>
+                <input id="specification-detail" name="listing[specification]" type="text" class="form-control" value="<%= listing.specification %>" required>
+                <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                    Please enter  specification.
+                </div>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label for="country" class="form-label">Country</label>
+                <input id="country" name="listing[country]" type="text" class="form-control" value="<%= listing.country %>" required>
+                <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                    Please enter valid country name.
+                </div>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label for="city" class="form-label">City</label>
+                <input id="city" name="listing[city]" type="text" class="form-control" value="<%= listing.city %>" required>
+                <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                    Please enter valid city name.
+                </div>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label for="address" class="form-label">Address</label>
+                <input id="address" name="listing[address]" type="text" class="form-control" value="<%= listing.address %>" required>
+                <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                    !Address required.
+                </div>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label for="image" class="form-label">Image URL</label>
+                <input id="image" name="listing[image]" type="file" class="form-control" value="<%= listing.image %>">
+            </div>
+            <div class="col-6">
+                <button type="submit" class="btn btn-primary btn-edit">Submit</button>
+            </div>
+        </div>
+    </form>
+</div>

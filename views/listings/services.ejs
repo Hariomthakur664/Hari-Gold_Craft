@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="/images/logo.jpg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms and Services</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div id="termsPopup" class="terms-popup">
+        <div class="popup-content">
+            <div class="popup-header">
+                <h2>Terms and Services</h2>
+                <span class="close-btn">&times;</span>
+            </div>
+            <div class="popup-body">
+                <p>Welcome to our jewelry shop platform. Please review our terms and services carefully:</p>
+                <ul>
+                    <li><strong>Direct Communication:</strong> This platform enables direct communication between customers and shopkeepers. Customers are encouraged to contact shopkeepers directly for inquiries, custom orders, and more.</li>
+                    <li><strong>Authorized Users:</strong> Only registered and authorized users can view detailed product listings and access individual shops.</li>
+                    <li><strong>Content Ownership:</strong> All product images, descriptions, and other content provided by shopkeepers are their intellectual property. Unauthorized use, reproduction, or redistribution of this content is prohibited.</li>
+                    <li><strong>Order Responsibility:</strong> All transactions are conducted directly between the customer and the shopkeeper. The platform is not responsible for any disputes arising from these transactions.</li>
+                    <li><strong>Customer Reviews:</strong> Only verified customers can leave reviews and ratings for products and shops. Reviews must be honest and based on personal experience.</li>
+                    <li><strong>Privacy and Data Protection:</strong> We take your privacy seriously. All personal data is securely stored and not shared with third parties without your consent.</li>
+                    <li><strong>Service Modifications:</strong> We reserve the right to modify or discontinue any service on the platform without prior notice. Such changes will be communicated promptly to our users.</li>
+                </ul>
+
+                <div class="checkbox-container">
+                    <input type="checkbox" id="agreeCheckbox" onclick="toggleAgreeButton()">
+                    <label for="agreeCheckbox">I have read and agree to the terms and services</label>
+                </div>
+            </div>
+            <div class="popup-footer">
+                <button id="agreeBtn" onclick="closePopup('termsPopup')" disabled>I Agree</button>
+
+            </div>
+        </div>
+    </div>
+    <script src="/js/script.js"></script>
+</body>
+</html>

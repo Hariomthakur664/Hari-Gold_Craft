@@ -1,0 +1,28 @@
+<div class="alert-container">
+    <% if(success && success.length){ %>
+        <div class="alert alert-success flash mt-3 custom-alert" role="alert">
+            <span><%= success %></span> 
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    <% } %>
+  
+    <% if(error && error.length){ %>
+        <div class="alert alert-danger flash mt-3 custom-alert" role="alert">
+            <span><%= error %></span> 
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    <% } %>
+</div> 
+
+<script>
+    // Automatically hide the alert after 5 seconds
+    setTimeout(function() {
+        const alert = document.querySelector('.alert');
+        if (alert) {
+            alert.classList.add('fade');
+            setTimeout(() => alert.remove(), 150);
+        }
+    }, 4000); // 5000ms = 5 seconds
+</script>
+
+  

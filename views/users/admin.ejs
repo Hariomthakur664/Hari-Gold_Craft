@@ -1,0 +1,36 @@
+<% layout("/layouts/boilerplate") %>
+
+    
+<div class="signup-container mt-3 mb-3">
+    <div class="signup-card">
+        <div class="signup-header">
+            <h3>  Gold-Smith  Create Your Account</h3>
+        </div>
+        <div class="signup-body">
+            <form action="/adminSignup" method="POST" class="needs-validation" novalidate>
+                <div class="form-group">
+                    <label for="username" class="signup-form-label">Username</label>
+                    <input type="text" class="form-control signup-input" id="username" name="username" placeholder="Enter your username" required>
+                    <small id="usernameHelp" class="form-text text-muted"></small>
+                </div>
+                <div class="form-group">
+                    <label for="email" class="signup-form-label">Email</label>
+                    <input type="email" class="form-control signup-input" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="licenseNumber" class="signup-form-label">LicenseNumber</label>
+                    <input type="text" class="form-control signup-input" id="licenseNumber" name="licenseNumber" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phoneNumber" class="signup-form-label">Phone-N0.</label>
+                    <input type="text" class="form-control signup-input" id="phoneNumber" name="phoneNumber" placeholder="Enter your Phone-No." required>
+                </div>
+                <div class="form-group">
+                    <label for="password" class="signup-form-label">Password</label>
+                    <input type="password" class="form-control signup-input" id="password" name="password" placeholder="Enter your password" required>
+                </div>
+                <button type="submit" class="btn signup-button">Sign Up</button>
+            </form>
+        </div>
+    </div>
+</div>

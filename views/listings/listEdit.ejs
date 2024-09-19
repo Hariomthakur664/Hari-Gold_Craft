@@ -1,0 +1,51 @@
+<% layout("/layouts/boilerplate") %>
+<div class="container mt-0 mb-0">         
+    <!-- Form container, hidden by default -->
+    <div class="List" id="listForm">
+        <h4 class="mb-3">Edit List</h4>
+        <!-- Use the list's _id directly here -->
+        <form action="/hr/listing/<%= listing._id %>/list/<%= list._id %>?_method=put" method="post" enctype="multipart/form-data" class="needs-validation" novalidate>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" name="list[name]" id="name" value="<%= list.name %>">
+                </div>
+                <div class="col-md-6">
+                    <label for="description" class="form-label">Description</label>
+                    <textarea class="form-control" name="list[description]" id="description" cols="6" rows="3"><%= list.description %></textarea>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="material" class="form-label">Material</label>
+                    <input type="text" class="form-control" name="list[material]" id="material" value="<%= list.material %>">
+                </div>
+                <div class="col-md-6">
+                    <label for="category" class="form-label">Category</label>
+                    <input type="text" class="form-control" name="list[category]" id="category" value="<%= list.category %>">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="images" class="form-label">Image</label>
+                    <input type="file" class="form-control" name="list[images]" id="images" value="<%= list.images %>">
+                </div>
+                <div class="col-md-6">
+                    <label for="basePricePerGram" class="form-label">Base Price</label>
+                    <input type="text" class="form-control" name="list[basePricePerGram]" id="basePricePerGram" value="<%= list.basePricePerGram %>">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="weightInGrams" class="form-label">Weight</label>
+                    <input type="text" class="form-control" name="list[weightInGrams]" id="weightInGrams" value="<%= list.weightInGrams %>">
+                </div>
+                <div class="col-md-6">
+                    <label for="jewellerName" class="form-label">Jeweller Name</label>
+                    <input type="text" class="form-control" name="list[jewellerName]" id="jewellerName" value="<%= list.jewellerName %>">
+                </div>
+            </div>
+            <button type="submit" class="btn btn-success">Submit</button>
+        </form>
+    </div>
+</div>

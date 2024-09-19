@@ -1,0 +1,71 @@
+<% layout("/layouts/boilerplate") %>
+
+<div class="container mt-4">
+    <h3 class="mb-4">Create Shop Listing</h3>
+    <form action="/hr/listing" method="post" class="needs-validation" enctype="multipart/form-data" novalidate>
+        <div class="row">
+            <!-- Shop Name Field -->
+            <div class="col-md-6 mb-3">
+                <label for="name" class="form-label">Shop Name</label>
+                <input id="name" name="listing[name]" type="text" class="form-control" placeholder="Enter shop name" required >
+                <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                    Please choose a Shop name.
+                </div>
+            </div>
+            <!-- Description Field -->
+            <div class="col-md-12 mb-3">
+                <label for="description" class="form-label">Description</label>
+                <textarea id="description" name="listing[description]" class="form-control" rows="3" placeholder="Enter description" required></textarea>
+                <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                    Please enter description.
+                </div>
+            </div>
+            <!-- Specification Field -->
+            <div class="col-md-6 mb-3">
+                <label for="specification" class="form-label">Specification</label>
+                <input id="specification" name="listing[specification]" type="text" class="form-control" placeholder="Enter specification">
+            </div>
+            <!-- Phone Number Field -->
+                <div class="col-md-6 mb-3">
+                    <label for="number" class="form-label">Phone N0.</label>
+                    <input id="number" name="listing[number]" type="text" class="form-control" placeholder="Enter number">
+                </div>
+            <!-- Country and City Fields in One Row -->
+            <div class="col-md-12 mb-3">
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="country" class="form-label" >Country</label>
+                        <input id="country" name="listing[country]" type="text" class="form-control" placeholder="Enter country" required>
+                        <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                            Please enter  country name.
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="city" class="form-label">City</label>
+                        <input id="city" name="listing[city]" type="text" class="form-control" placeholder="Enter city" required>
+                        <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                            Please enter city name.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Address Field -->
+            <div class="col-md-12 mb-3">
+                <label for="address" class="form-label" required>Shop Address</label>
+                <input id="address" name="listing[address]" type="text" class="form-control" placeholder="Enter shop address" required>
+                <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                    Please enter current address.
+                </div>
+            </div>
+            <!-- Image URL Field -->
+            <div class="col-md-12 mb-3">
+                <label for="image" class="form-label">Image URL</label>
+                <input id="image" name="listing[image]" type="file" class="form-control" required >
+            </div>
+            <!-- Submit Button -->
+            <div class="col-12">
+                <button type="submit" class="btn btn-primary btn-edit">Submit</button>
+            </div>
+        </div>
+    </form>
+</div>

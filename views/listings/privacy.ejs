@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <link rel="shortcut icon" href="/images/logo.jpg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy</title>
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div id="privacyPopup" class="privacy-popup">
+        <div class="popup-content">
+            <div class="popup-header">
+                <h2>Privacy Notice</h2>
+                <span class="close-btn">&times;</span>
+            </div>
+            <div class="popup-body">
+                <p>Welcome to our exclusive jewelry shop, where privacy and security are our top priorities. To ensure the best experience for both our customers and shopkeepers, please be aware of the following:</p>
+                <ul>
+                    <li><strong>Authorized Access Only:</strong> Viewing items and accessing individual shops on our platform is restricted to authorized users. This is to protect the privacy and integrity of our shopkeepers and their products.</li>
+                    <li><strong>Direct Communication:</strong> Our platform is designed to facilitate direct communication between customers and shopkeepers. You can connect with shopkeepers directly for inquiries, custom orders, and other requests, ensuring a personalized shopping experience.</li>
+                    <li><strong>Data Protection:</strong> We are committed to safeguarding your personal information. All data shared on our platform is encrypted and securely stored. We do not share your information with third parties without your explicit consent.</li>
+                    <li><strong>Shop Reviews and Ratings:</strong> Only verified customers can leave reviews and ratings for shops and products. This helps maintain the authenticity and trustworthiness of feedback within our community.</li>
+                    <li><strong>Secure Transactions:</strong> All transactions on our platform are secured with industry-standard encryption. Your payment details are never stored on our servers, ensuring the highest level of security.</li>
+                </ul>
+                <div class="checkbox-container">
+                    <input type="checkbox" id="agreeCheckbox" onclick="toggleAgreeButton()">
+                    <label for="agreeCheckbox">I have read and agree to the privacy notice</label>
+                </div>
+            </div>
+            <div class="popup-footer">
+                <button id="agreeBtn" onclick="closePopup('privacyPopup')" disabled>I Agree</button>
+            </div>
+        </div>
+    </div>
+    <script src="/js/script.js"></script>
+</body>
+</html>

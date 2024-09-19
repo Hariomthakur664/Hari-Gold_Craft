@@ -1,0 +1,27 @@
+<% layout("/layouts/boilerplate") %>
+<div class="login-container">
+    <form action="/adminLogin" method="POST" class="needs-validation" novalidate>
+        <div class="login-header">
+            <h3>Login For Gold-Smith</h3>
+        </div>
+        <div class="form-group">
+            <label for="username" class="login-form-label">Username</label>
+            <input type="text" class="form-control login-input" id="username" name="username" placeholder="Enter your username" required>
+        </div>
+        <div class="form-group">
+            <label for="password" class="login-form-label">Password</label>
+            <input type="password" class="form-control login-input" id="password" name="password" placeholder="Enter your password" required>
+        </div>
+        <button type="submit" class="btn login-button">Login</button>
+        <div class="text-center mt-3">
+            <p class="mb-2">Or</p>
+            <a href="/adminSignup" class="admin-signup-link">Admin Sign-Up</a>
+        </div>
+    </form>
+</div>
+
+
+            
+    </div>
+
+
