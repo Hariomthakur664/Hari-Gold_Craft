@@ -17,7 +17,7 @@ const sendVerifyMail = async (name, email, user_id) => {
             from: "hariomthakur664@gmail.com",
             to: email, // Corrected this line
             subject: "Verification Email",
-            html: `<p>Hi ${name}, please click here to verify your account <a href="http://localhost:3000/verifyAdmin?id=${user_id}">Verify</a> your email</p>`
+            html: `<p>Hi ${name}, please click here to verify your account <a href="https://hari-gold-craft.onrender.com/verifyAdmin?id=${user_id}">Verify</a> your email</p>`
         };
 
         transporter.sendMail(mailOptions, (err, info) => {

@@ -1,162 +1,162 @@
 <% layout("/layouts/boilerplate") %>
 
-    <div class="container mt-4 mb-4">
-        <div class="card mx-auto mb-0" style="max-width: 800px;">
-            <img src="<%= listings.image.url %>" class="card-img-top" style="width: 100%;" alt="Listing Image">
-            <div class="card-body">
-                <h4 class="card-title"><b><i> Shop Owner :- <%= listings.owner.username %></i></b></h4>
-                <h5 class="card-title"><b><%= listings.name %></b></h5>
-                <p class="card-text mb-0"><b>Description :- </b><%= listings.description %></p>
-                <p class="card-text mb-0"><strong>Country:</strong> <%= listings.country %></p>
-                <div style="display: flex;">
-                    <strong style="margin-right: 0.3rem;">Location:</strong>
-                    <a class="card-text location-link" 
-                    href="https://www.google.com/maps/dir/?api=1&origin=Current+Location&destination=<%= encodeURIComponent(listings.address) %>"
-                    target="_blank"> <%= listings.address %>
-                    </a>
-                </div>
-                
-                <p class="card-text"><strong>Specification:</strong> <%= listings.specification %></p>
-                
-                <% if(currUser && currUser._id.equals(listings.owner._id)) {%>
-                    <div class="d-flex justify-content-between mt-0 mb-0">
-                        <a href="/hr/listing/<%= listings._id %>/edit" class="btn btn-primary">Edit</a>
-                        <form action="/hr/listing/<%= listings._id %>?_method=DELETE" method="post" style="display: inline;">
-                            <button type="submit" class="btn btn-danger">Delete</button>
-                        </form>
-                    </div>
-                <%  }%>
+<div class="container mt-4 mb-4">
+    <!-- Card for listing details -->
+    <div class="card mx-auto mb-0" style="max-width: 800px; width: 100%;">
+        <img src="<%= listings.image.url %>" class="card-img-top" style="width: 100%;" alt="Listing Image">
+        <div class="card-body">
+            <h4 class="card-title"><b><i> Shop Owner :- <%= listings.owner.username %></i></b></h4>
+            <h5 class="card-title"><b><%= listings.name %></b></h5>
+            <p class="card-text mb-0"><b>Description :- </b><%= listings.description %></p>
+            <p class="card-text mb-0"><strong>Country:</strong> <%= listings.country %></p>
+            <div style="display: flex;">
+                <strong style="margin-right: 0.3rem;">Location:</strong>
+                <a class="card-text location-link" href="https://www.google.com/maps/dir/?api=1&origin=Current+Location&destination=<%= encodeURIComponent(listings.address) %>" target="_blank"> 
+                    <%= listings.address %>
+                </a>
             </div>
-            
-            <hr class=" mt-0">
+            <p class="card-text"><strong>Specification:</strong> <%= listings.specification %></p>
 
-            <!--for listings-->
-            <div class="container mt-0 mb-0">
-                <!-- Button to toggle form visibility, initially visible -->
-                <% if(currUser && currUser._id.equals(listings.owner._id)) {%>
-                    <button class="btn btn-warning mb-3" id="toggleFormButton">Add Jeweller For Selling</button>   
-                <% } %>         
-                <!-- Form container, hidden by default -->
-                <div class="List" id="listForm" style="display: none;">
-                    <h4 class="mb-3">Add List</h4>
-                    <form action="/hr/listing/<%= listings._id %>/List" method="post" class="needs-validation" enctype="multipart/form-data" novalidate>
-                        <div class="row mb-3">
-                            <div class="col-md-6">
-                                <label for="name" class="form-label">Name</label>
-                                <input type="text" class="form-control" name="list[name]" id="name" placeholder="enter jewellery type" required>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="description" class="form-label" >Description</label>
-                                <input type="text" class="form-control" name="list[description]" id="description" placeholder="enter description"  required>
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <div class="col-md-6">
-                                <label for="material" class="form-label">Material</label>
-                                <input type="text" class="form-control" name="list[material]" id="material" placeholder="enter material type" required>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="category" class="form-label">Category</label>
-                                <input type="text" class="form-control" name="list[category]" id="category" placeholder="enter category type"  required>
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <div class="col-md-6">
-                                <label for="images" class="form-label">Image</label>
-                                <input type="file" class="form-control" name="list[images]" id="images" required >
-                            </div>
-                            <div class="col-md-6">
-                                <label for="basePricePerGram" class="form-label">Base Price</label>
-                                <input type="number" class="form-control" name="list[basePricePerGram]" id="basePricePerGram" placeholder=" enter basePricePerGram" required  >
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <div class="col-md-6">
-                                <label for="weightInGrams" class="form-label">Weight</label>
-                                <input type="text" class="form-control" name="list[weightInGrams]" id="weightInGrams" placeholder="enter weight in grams"  required>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="jewellerName" class="form-label">Jeweller Name</label>
-                                <input type="text" class="form-control" name="list[jewellerName]" id="jewellerName" placeholder="enter your name"  value="<%= listings.owner.username %>">
-                            </div>
-                        </div>
-                        <button type="submit" class="btn btn-success mb-2">Submit</button>
+            <% if(currUser && currUser._id.equals(listings.owner._id)) {%>
+                <div class="d-flex justify-content-between mt-0 mb-0">
+                    <a href="/hr/listing/<%= listings._id %>/edit" class="btn btn-primary btn-sm">Edit</a>
+                    <form action="/hr/listing/<%= listings._id %>?_method=DELETE" method="post" style="display: inline;">
+                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
                     </form>
                 </div>
-                <a href="/hr/listing/<%= listings._id %>/listShow"  class="btn btn-success mb-3 " style="margin-left: 2rem; max-height: 2rem;">Show Jeweller's</a>
-            </div>
-                        
-            <hr class="mb-0 mt-0">
-            
-            <!--for reviews-->
-            <div class="review-section mt-0 ">
-                <form method="post" action="/hr/listing/<%= listings._id %>/reviews" class="needs-validation" novalidate>
-                    <div class="form-group row">
-                        <h5 class="mb-1">Submit Your Review</h5>
-                        <label for="rating" class="col-sm-5 col-form-label">Rating</label>
-                        <div class="col-sm-7">
-                            <div class="star-rating">
-                                <input type="radio" id="star5" name="review[rating]" value="5" required/><label for="star5" title="5 stars"><i class="fas fa-star"></i></label>
-                                <input type="radio" id="star4" name="review[rating]" value="4" required/><label for="star4" title="4 stars"><i class="fas fa-star"></i></label>
-                                <input type="radio" id="star3" name="review[rating]" value="3" required/><label for="star3" title="3 stars"><i class="fas fa-star"></i></label>
-                                <input type="radio" id="star2" name="review[rating]" value="2" required/><label for="star2" title="2 stars"><i class="fas fa-star"></i></label>
-                                <input type="radio" id="star1" name="review[rating]" value="1" required/><label for="star1" title="1 star"><i class="fas fa-star"></i></label>
-                            </div>
-                        </div>
-                    </div>                                        
+            <% } %>
+        </div>
 
-                    <div class="form-group row">
-                        <label for="comment" class="col-sm-5 col-form-label">Comment</label>
-                        <div class="col-sm-7">
-                            <textarea class="form-control review-text" id="comment" name="review[comment]" rows="3" placeholder="Write your comment here" required></textarea>
-                            <div id="validationServerUsernameFeedback" class="invalid-feedback">
-                                Please write comments.
-                            </div>
+        <hr class="mt-0">
+
+        <!-- Listing Section -->
+        <div class="container mt-0 mb-0">
+            <% if(currUser && currUser._id.equals(listings.owner._id)) {%>
+                <button class="btn btn-warning mb-3" id="toggleFormButton">Add Jeweller For Selling</button>
+            <% } %> 
+
+            <div class="List" id="listForm" style="display: none;">
+                <h4 class="mb-3">Add List</h4>
+                <form action="/hr/listing/<%= listings._id %>/List" method="post" class="needs-validation" enctype="multipart/form-data" novalidate>
+                    <div class="row mb-3">
+                        <div class="col-12 col-sm-6">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" name="list[name]" id="name" placeholder="enter jewellery type" required>
                         </div>
-                        <div class="col-sm-10 mb-0 ">
-                            <button type="submit" class="btn btn-primary btn-review">Submit</button>
+                        <div class="col-12 col-sm-6">
+                            <label for="description" class="form-label">Description</label>
+                            <input type="text" class="form-control" name="list[description]" id="description" placeholder="enter description" required>
                         </div>
                     </div>
+
+                    <div class="row mb-3">
+                        <div class="col-12 col-sm-6">
+                            <label for="material" class="form-label">Material</label>
+                            <input type="text" class="form-control" name="list[material]" id="material" placeholder="enter material type" required>
+                        </div>
+                        <div class="col-12 col-sm-6">
+                            <label for="category" class="form-label">Category</label>
+                            <input type="text" class="form-control" name="list[category]" id="category" placeholder="enter category type" required>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-12 col-sm-6">
+                            <label for="images" class="form-label">Image</label>
+                            <input type="file" class="form-control" name="list[images]" id="images" required>
+                        </div>
+                        <div class="col-12 col-sm-6">
+                            <label for="basePricePerGram" class="form-label">Base Price</label>
+                            <input type="number" class="form-control" name="list[basePricePerGram]" id="basePricePerGram" placeholder="enter basePricePerGram" required>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-12 col-sm-6">
+                            <label for="weightInGrams" class="form-label">Weight</label>
+                            <input type="text" class="form-control" name="list[weightInGrams]" id="weightInGrams" placeholder="enter weight in grams" required>
+                        </div>
+                        <div class="col-12 col-sm-6">
+                            <label for="jewellerName" class="form-label">Jeweller Name</label>
+                            <input type="text" class="form-control" name="list[jewellerName]" id="jewellerName" placeholder="enter your name" value="<%= listings.owner.username %>">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-success mb-2">Submit</button>
                 </form>
             </div>
 
-            <hr class="mb-2 mt-0">
+            <a href="/hr/listing/<%= listings._id %>/listShow" class="btn btn-success mb-3" style="margin-left: 2rem; max-height: 2rem;">Show Jeweller's</a>
+        </div>
 
-            <div class="container mt-0">  
-                <div class="row">
-                    <b>All Reviews</b>
-                    <% for (review of listings.review) { %>
-                        <div class="col-md-4 mb-3">
-                            <div class="card review">
-                                <div class="card-body">
+        <hr class="mb-0 mt-0">
 
-                                        <b>@<%= review.author.username %></b>
-                                   
-                                    <div class="stars mt-0" style="display: inline-flex;">
-                                       <b>Rating: </b> 
-                                        <% for (let i = 0; i < review.rating; i++) { %>
-                                            <span class="star-rating">
-                                                <i class="fas fa-star"></i>
-                                            </span>
-                                        <% } %>
-                                    </div>
-                                    <div class="comment mt-0">
-                                         <%= review.comment %>
-                                    
-                                       
-                                    </div>
-                                    
-                                    <% if(currUser && currUser._id.equals(review.author._id)){ %>
-                                        <form  method="POST" action="/hr/listing/<%= listings._id %>/reviews/<%= review._id %>?_method=DELETE" class="mt-1 mb-0">
-                                            <button class="btn btn-sm btn-dark ">Delete</button>
-                                        </form>
-                                <% } %>
-
-                                </div>
-                            </div>
+        <!-- Review Section -->
+        <div class="review-section mt-0">
+            <form method="post" action="/hr/listing/<%= listings._id %>/reviews" class="needs-validation" novalidate>
+                <div class="form-group row">
+                    <h5 class="mb-1">Submit Your Review</h5>
+                    <div class="col-sm-12">
+                        <label for="rating" class="col-sm-12 col-form-label">Rating</label>
+                        <div class="star-rating">
+                            <input type="radio" id="star1" name="review[rating]" value="1" required/><label for="star1" title="1 star"><i class="fas fa-star"></i></label>
+                            <input type="radio" id="star2" name="review[rating]" value="2" required/><label for="star2" title="2 stars"><i class="fas fa-star"></i></label>
+                            <input type="radio" id="star3" name="review[rating]" value="3" required/><label for="star3" title="3 stars"><i class="fas fa-star"></i></label>
+                            <input type="radio" id="star4" name="review[rating]" value="4" required/><label for="star4" title="4 stars"><i class="fas fa-star"></i></label>
+                            <input type="radio" id="star5" name="review[rating]" value="5" required/><label for="star5" title="5 stars"><i class="fas fa-star"></i></label>
                         </div>
-                    <% } %>
+                    </div>
+                </div>
+
+                <div class="form-group row mt-0">
+                    <label for="comment" class="col-sm-5 col-form-label">Comment</label>
+                    <div class="col-sm-7 mt-0">
+                        <textarea class="form-control review-text" id="comment" name="review[comment]" rows="3" placeholder="Write your comment here" required></textarea>
+                        <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                            Please write comments.
+                        </div>
+                    </div>
+                    <div class="col-sm-10 mb-0 mt-1">
+                        <button type="submit" class="btn btn-primary btn-review">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <hr class="mb-2 mt-0">
+
+        <!-- Display Reviews --><div class="container mt-0">
+    
+    <div class="row">
+        <h5 class="mb-3">All Reviews</h5>
+        <% for (review of listings.review) { %>
+            <div class="col-12 col-sm-6 col-md-4 mb-3">
+                <div class="card review" style="height: 100%;">
+                    <div class="card-body d-flex flex-column">
+                        <b>@<%= review.author.username %></b>
+                        <div class="stars mt-1" style="display: inline-flex;">
+                            <b>Rating: </b> 
+                            <% for (let i = 0; i < review.rating; i++) { %>
+                                <span class="star-rating">
+                                    <i class="fas fa-star"></i>
+                                </span>
+                            <% } %>
+                        </div>
+                        <div class="comment mt-2 flex-grow-1">
+                            <%= review.comment %>
+                        </div>
+                        <% if(currUser && currUser._id.equals(review.author._id)) {%>
+                            <form method="post" action="/hr/listing/<%= listings._id %>/reviews/<%= review._id %>?_method=DELETE" style="display: inline;">
+                                <button type="submit" class="btn btn-danger btn-sm mt-2">Delete</button>
+                            </form>
+                        <% } %>
+                    </div>
                 </div>
             </div>
-        </div>
+        <% } %>
     </div>
+</div>
+
+        
+    </div>
+</div>
