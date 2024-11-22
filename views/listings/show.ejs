@@ -5,7 +5,6 @@
     <div class="card mx-auto mb-0" style="max-width: 800px; width: 100%;">
         <img src="<%= listings.image.url %>" class="card-img-top" style="width: 100%;" alt="Listing Image">
         <div class="card-body">
-            <h4 class="card-title"><b><i> Shop Owner :- <%= listings.owner.username %></i></b></h4>
             <h5 class="card-title"><b><%= listings.name %></b></h5>
             <p class="card-text mb-0"><b>Description :- </b><%= listings.description %></p>
             <p class="card-text mb-0"><strong>Country:</strong> <%= listings.country %></p>
@@ -111,7 +110,7 @@
                 <div class="form-group row mt-0">
                     <label for="comment" class="col-sm-5 col-form-label">Comment</label>
                     <div class="col-sm-7 mt-0">
-                        <textarea class="form-control review-text" id="comment" name="review[comment]" rows="3" placeholder="Write your comment here" required></textarea>
+                        <textarea class="form-control review-text" id="comment" name="review[comment]" rows="3" placeholder="Write your comment here" style="width: 100% !important;" required></textarea>
                         <div id="validationServerUsernameFeedback" class="invalid-feedback">
                             Please write comments.
                         </div>

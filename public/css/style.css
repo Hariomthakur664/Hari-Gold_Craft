@@ -1415,18 +1415,20 @@ body, html {
         .btn.responsive-button {
             font-size: 0.6rem;
             margin: 0;
+            padding: 0;
         }
     }
 
     @media (min-width: 768px) {
         .card-title {
-            font-size: 1.1rem;
+            font-size: 1rem;
         }
         .card-text {
-            font-size: 0.9rem;
+            font-size: 0.7rem;
         }
         .btn.responsive-button {
-            font-size: 0.9rem;
+            font-size: 0.5rem;
+            padding: 0;
         }
     }
 
@@ -1439,6 +1441,7 @@ body, html {
         }
         .btn.responsive-button {
             font-size: 1rem;
+            padding: 0;
         }
     }
 
@@ -1455,15 +1458,18 @@ body, html {
 
     @media (max-width: 576px) {
         .card-title {
-            font-size: 1rem; /* Adjust title size for small screens */
+            font-size: 0.9rem; /* Adjust title size for small screens */
         }
     
         .card-text {
-            font-size: 0.9rem; /* Adjust text size for small screens */
+            font-size: 0.9rem !important; /* Adjust text size for small screens */
         }
     
         .review-text {
-            font-size: 0.85rem; /* Smaller textarea font */
+            font-size: 0.85rem !important; /* Smaller textarea font */
+            width: 100% !important;
+            box-sizing: border-box;
+         
         }
     
         .btn {
@@ -1513,6 +1519,12 @@ body, html {
         .review {
             font-size: 0.65rem; /* Adjust for small screens */
         }
+        
+        .review-text {
+            font-size: 1rem !important; /* Smaller textarea font */
+            width: 100% !important;
+            box-sizing: border-box;
+        }
     }
     
     @media (min-width: 576px) and (max-width: 768px) {
@@ -1526,4 +1538,98 @@ body, html {
             font-size: 1.05rem; /* Larger font for bigger screens */
         }
     }
+
+
+    
+ 
+
+/* Adjustments for larger screens */
+@media (min-width: 769px) {
+    .navbar-brand img {
+        width: 40px !important; /* Larger logo size */
+        height: 40px !important;
+    }
+
+    .navbar-toggler {
+        font-size: 1.1rem !important; /* Adjust toggler icon size */
+    }
+
+    .form-control {
+        font-size: 0.7rem !important; /* Larger search input font */
+        min-width: 400px !important; /* Adjust width of search bar */
+        margin-left: 1rem;
+    }
+    #generalNav{
+        margin-left: 15rem !important;
+        font-size: 20px !important;
+    }
+    #userNav{
+        position:absolute ;
+        right: 8rem;
+    }
+    .btn-outline-success {
+        font-size: 0.7rem; /* Larger button font size */
+    }
+}
+
+/* Adjust navbar for smaller screens */
+@media (max-width: 768px) {
+    .navbar-brand img {
+      width: 40px !important; /* Smaller logo size */
+      height: 40px !important;
+    }
+  
+    .navbar-toggler {
+      font-size: 0.9rem; /* Adjust toggler icon size */
+      
+    }
+  
+    .form-control {
+      font-size: 0.75rem; /* Smaller search input font */
+      min-width: 100px; /* Adjust width of search bar */
+    }
+  
+    .btn-outline-success {
+      font-size: 0.7rem; /* Smaller button font size */
+    }
+  }
+  
+  /* Adjust navbar for extra small screens */
+  @media (max-width: 576px) {
+    .navbar-brand img {
+        width: 35px !important; /* Smaller logo size */
+        height: 35px !important;
+
+      }
+    .navbar-brand {
+      font-size: 0.5rem; /* Smaller brand text */
+      padding: 0 !important; 
+      margin: 2px !important;
+    }
+  
+    .form-control {
+        width: 130px !important; 
+        padding: 0 !important;
+        margin-left: 5px !important ;
+        margin-right: 0 !important;
+    }
+    .navbar-collapse {
+        text-align: end;
+        background-color: #ddd;
+        color: #d4af37;
+        font-size: 0.5rem !important;
+        margin: 2px !important;
+        
+    }
+  
+    .dropdown-menu {
+      font-size: 0.5rem !important; /* Smaller dropdown font size */
+      background-color: #f8f9fa; /* Lighter dropdown background for readability */
+      color: black;
+      margin-right: 0 !important;
+      margin-left: 0;
+      padding: 0;
+    }
+  }
+  
         
